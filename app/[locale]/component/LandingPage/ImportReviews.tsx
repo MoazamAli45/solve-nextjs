@@ -8,7 +8,6 @@ import { Fade, Slide, Zoom } from "react-awesome-reveal";
 import Typewriter from "typewriter-effect/dist/core";
 import { useTranslation } from "react-i18next";
 import Spinner from "../Shared/Spinner";
-
 import { FaCheck } from "react-icons/fa6";
 import SpinnerWhite from "../Shared/SpinnerWhite";
 
@@ -204,7 +203,7 @@ const ImportReviews: React.FC = () => {
                             Import
                           </p>
                         ) : (
-                          <div className="flex space-x-2">
+                          <div className="flex space-x-2 items-center">
                             <SpinnerWhite />
                             <p
                               // ref={typewriterRef}
