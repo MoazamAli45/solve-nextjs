@@ -377,7 +377,7 @@ const ImportReviews: React.FC = () => {
                       height={100}
                       alt="tick"
                     />
-                    <h3 className="font-rockSalt text-[30px] text-[#534599]">
+                    <h3 className="font-rockSalt text-[24px] sm:text-[30px] text-[#534599]">
                       Details Found
                     </h3>
                   </div>
