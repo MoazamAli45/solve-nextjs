@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  overflow-x: hidden;
+}
+
+/* =======> drawer style */
+.drawer {
+  width: 50% !important;
+  background-color: #bfeaff !important;
+}
+.hideScroll::-webkit-scrollbar {
+  display: none !important;
+}
+
+.slick-slide {
+  margin: auto !important;
+}
+
+/* tooltip styles ----->  */
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip:before {
+  content: attr(data-text);
+  position: absolute;
+  top: -70%;
+  transform: translateY(-50%);
+  width: 160px;
+  padding: 10px;
+  left: -40%;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  display: none;
+}
+
+.tooltip:hover:before {
+  display: block;
+}
+
+.tooltip:after {
+  content: "";
+  position: absolute;
+  top: -14%;
+  left: 31%;
+  /* transform: translateY(0%); */
+  border: 10px solid #000;
+  rotate: -90deg;
+  border-color: transparent black transparent transparent;
+  display: none;
+}
+.tooltip:hover:before,
+.tooltip:hover:after {
+  display: block;
+}
+
+/* import button styles --->  */
+
+@keyframes scaleUpDown {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.buttonScaleAnimation {
+  animation: scaleUpDown 2s infinite; /* Adjust time as needed */
+}
+
+/* reviews styles ------>  */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+
+.review-slide-in {
+  animation: slideDown 0.5s ease forwards;
+}
+
+.review-slide-out {
+  animation: slideUp 0.5s ease forwards;
+}
+
+/* spinner styles ---->  */
+.loader {
+  width: 21px;
+  height: 21px;
+  border: 2px solid black;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.loader-white {
+  width: 21px;
+  height: 21px;
+  border: 2px solid white;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* spinner styles ends here -----> */
+
+@media screen and (max-width: 500px) {
+  .slick-dots li button:before {
+    font-size: 8px !important;
+  }
+  .slick-dots {
+    bottom: -36px !important;
+  }
+  .tooltip:before {
+    top: -70%;
+    transform: translateY(-50%);
+    width: 120px;
+    padding: 8px;
+    left: -20%;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+  .tooltip:after {
+    top: -17%;
+    left: 32%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .drawer {
+    width: 70% !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .drawer {
+    width: 100% !important;
+  }
+}
