@@ -10,6 +10,7 @@ import { useTranslation } from "react-i18next";
 import Spinner from "../Shared/Spinner";
 import { FaCheck } from "react-icons/fa6";
 import SpinnerWhite from "../Shared/SpinnerWhite";
+import { SparklesCore } from "../Shared/Sparkles";
 
 const ImportReviews: React.FC = () => {
   const { t } = useTranslation();
@@ -28,18 +29,18 @@ const ImportReviews: React.FC = () => {
   //  For Data found
   const [dataFound, setDataFound] = useState(false);
 
-  useEffect(() => {
-    if (typewriterRef.current) {
-      new Typewriter(typewriterRef.current, {
-        strings: ["Reviews"],
-        autoStart: true,
-        changeDeleteSpeed: 3,
-        changeDelay: 2,
-        pauseFor: 100,
-        loop: true,
-      });
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (typewriterRef.current) {
+  //     new Typewriter(typewriterRef.current, {
+  //       strings: ["Reviews"],
+  //       autoStart: true,
+  //       changeDeleteSpeed: 3,
+  //       changeDelay: 2,
+  //       pauseFor: 100,
+  //       loop: true,
+  //     });
+  //   }
+  // }, []);
 
   const handleImportClick = () => {
     setImportStatus({ 1: "importing", 2: "importing", 3: "importing" });
@@ -235,14 +236,21 @@ const ImportReviews: React.FC = () => {
                         fill
                       />
                       {/* text  */}
-                      <div className="flex justify-center items-center gap-1 lg:gap-2 absolute top-[2rem] md:top-[1rem] lg:top-[2rem] celg:top-[3rem] xl:top-[5rem] -left-[3rem] md:-left-[5rem] celg:-left-[3rem] clg:-left-[2rem] xl:-left-[1rem]">
-                        <p className="text-[12px] csm2:text-[16px] md:text-[14px] lg:text-[18px] xl:text-[24px] text-[#534599] font-bold ">
-                          Import
-                        </p>
-                        <p
-                          ref={typewriterRef}
-                          className="text-[12px] csm2:text-[16px] md:text-[14px] lg:text-[18px] xl:text-[24px] text-[#534599] font-bold "
-                        ></p>
+                      {/*     CLICK HERE TEXT CHANGED ----------------> */}
+                      <div className="flex  justify-center items-center gap-1 lg:gap-2 absolute top-[2rem] md:top-[1rem] lg:top-[2rem] celg:top-[3rem] xl:top-[5rem] -left-[3rem] md:-left-[5rem] celg:-left-[3rem] clg:-left-[2rem] xl:-left-[1rem]">
+                        <div className="flex flex-col overflow-x-hidden  w-full">
+                          <p className="text-[12px] csm2:text-[16px] md:text-[14px] lg:text-[18px] xl:text-[24px] text-[#534599] font-bold ">
+                            Click Here
+                          </p>
+                          <SparklesCore
+                            background="transparent"
+                            minSize={0.4}
+                            maxSize={1}
+                            particleDensity={1200}
+                            className="w-[65%] h-full"
+                            particleColor="#534599"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
